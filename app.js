@@ -1,8 +1,9 @@
 // DECLARATIONS
 const qwerty = document.getElementById("qwerty");
 const phrase = document.getElementById("phrase");
-const missed = 0;
-const startGame = document.getElementById("bnt_reset");
+let missed = 0;
+const startGame = document.querySelector(".btn__reset");
+const overlay = document.getElementById("overlay");
 // RANDOM PHRASES
 const phrasesArray = [
 	"Its Clobberin Time",
@@ -11,9 +12,11 @@ const phrasesArray = [
 	"Im the best at what I do",
 	"Hulk Smash",
 ];
-// START BUTOTN
-
+// HIDE OVERLAY
+startGame.addEventListener("click", function () {
+	overlay.style.display = "none";
+});
 // RANDOM PHRASE FUNCTION
-function getRandomPhraseArray(phrasesArray) {
-	return phrasesArray[Math.floor(Math.random() * phrasesArray.length)];
+function getRandomPhraseArray(arr) {
+	return phrasesArray[Math.floor(Math.random() * arr.length)].split("");
 }
