@@ -26,3 +26,10 @@ function getRandomPhraseArray(arr) {
 }
 randomPhrase = getRandomPhraseArray(phrasesArray);
 //GAME DISPLAY
+
+function addPhraseToDisplay(arr) {
+	for (i = 0; i <= phrasesArray.length; i++);
+	let li = document.createElement("li");
+	phrase.appendChild(li);
+	li.appendChild(phrasesArray[i]);
+}
