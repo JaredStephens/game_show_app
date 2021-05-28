@@ -85,4 +85,13 @@ function checkWin() {
 		title.textContent = "You lost!";
 		overlay.style.display = "flex";
 	}
+	gameReset();
+}
+
+// RESET GAME
+function gameReset() {
+	startGame.textContent = "Play Again";
+	startGame.addEventListener("click", () => {
+		location.reload();
+	});
 }
