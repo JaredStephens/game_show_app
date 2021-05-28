@@ -50,8 +50,8 @@ function checkLetter(button) {
 			letter[i].style.transition = "0.5s ease-in";
 			letterFound = true;
 		}
-		return letterFound;
 	}
+	return letterFound;
 }
 
 // KEYBOARD
