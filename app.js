@@ -28,8 +28,15 @@ randomPhrase = getRandomPhraseArray(phrasesArray);
 //GAME DISPLAY
 
 function addPhraseToDisplay(arr) {
-	for (i = 0; i <= phrasesArray.length; i++);
-	let li = document.createElement("li");
-	phrase.appendChild(li);
-	li.appendChild(phrasesArray[i]);
+	for (i = 0; i < arr.length; i++) {
+		let li = document.createElement("li");
+		li.textContent = arr[i].toLowerCase();
+		phrase.appendChild(li);
+		if (li.textContent !== " ") {
+			li.className = "letter";
+		} else {
+			li.className = "space";
+		}
+	}
 }
+addPhraseToDisplay(randomPhrase);
