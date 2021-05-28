@@ -46,8 +46,8 @@ function checkLetter(button) {
 	let letterFound = null;
 	for (i = 0; i < letter.length; i++) {
 		if (button === letter[i].textContent.toLowerCase()) {
-			letter[li].classList.add("show");
-			letter[i].style.transition = "1s ease-in";
+			letter[i].classList.add("show");
+			letter[i].style.transition = "0.5s ease-in";
 			letterFound = true;
 		}
 		return letterFound;
@@ -56,7 +56,7 @@ function checkLetter(button) {
 
 // KEYBOARD
 qwerty.addEventListener("click", (e) => {
-	if (e.target.tagName === "button") {
+	if (e.target.tagName === "BUTTON") {
 		e.target.className = "chosen";
 		e.target.disabled = true;
 		const match = checkLetter(e.target.textContent.toLowerCase());
@@ -70,3 +70,19 @@ qwerty.addEventListener("click", (e) => {
 		checkWin();
 	}
 });
+
+// CHECKWIN
+function checkWin() {
+	const letter = document.querySelectorAll(".letter");
+	const show = document.querySelectorAll(".show");
+
+	if (letter.length === show.length) {
+		overlay.className = "win";
+		title.textContent = "You won!";
+		overlay.style.display = "flex";
+	} else if (missed >= 5) {
+		overlay.className = "lose";
+		title.textContent = "You lost!";
+		overlay.style.display = "flex";
+	}
+}
