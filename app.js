@@ -75,12 +75,12 @@ qwerty.addEventListener("click", (e) => {
 function checkWin() {
 	const letter = document.querySelectorAll(".letter");
 	const show = document.querySelectorAll(".show");
-
+	let title = document.querySelector(".title");
 	if (letter.length === show.length) {
 		overlay.className = "win";
 		title.textContent = "You won!";
 		overlay.style.display = "flex";
-	} else if (missed >= 5) {
+	} else if (missed > 4) {
 		overlay.className = "lose";
 		title.textContent = "You lost!";
 		overlay.style.display = "flex";
